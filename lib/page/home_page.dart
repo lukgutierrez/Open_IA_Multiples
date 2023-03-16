@@ -10,7 +10,16 @@ class HomePage extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [ElevatedButton(onPressed: () {}, child: Text("INICIAR"))],
+          children: [
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => PageOne()),
+                  );
+                },
+                child: Text("INICIAR")),
+          ],
         ),
       ),
     );
@@ -20,9 +29,15 @@ class HomePage extends StatelessWidget {
 class PageOne extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return WebView(
-      initialUrl: "https://dnschecker.org/reverse-image-search.php",
-      javascriptMode: JavascriptMode.unrestricted,
-    );
+    return Scaffold(
+        body: SafeArea(
+      child: WebView(
+        initialUrl: "https://chat.openai.com/chat",
+        javascriptMode: JavascriptMode.unrestricted,
+      ),
+    ));
   }
 }
+//"https://poe.com",
+
+
