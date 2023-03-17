@@ -33,7 +33,8 @@ class _HomePageState extends State<HomePage> {
                       );
                     },
                     child: Text("INICIAR")),
-                MySlider()
+                MySlidingButton(
+                    text: "hola", width: 200, height: 200, borderRadius: 30),
               ],
             ),
           ),
@@ -78,6 +79,113 @@ class _MySliderState extends State<MySlider> {
           _value = value;
         });
       },
+    );
+  }
+}
+
+class MySlidingButton extends StatefulWidget {
+  final String text;
+  final double width;
+  final double height;
+  final double borderRadius;
+
+  MySlidingButton({
+    required this.text,
+    required this.width,
+    required this.height,
+    required this.borderRadius,
+  });
+
+  @override
+  _MySlidingButtonState createState() => _MySlidingButtonState();
+}
+
+class _MySlidingButtonState extends State<MySlidingButton>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _animationController;
+
+  bool _isAnimating = false;
+  double _position = 0.0;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _animationController = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: 500),
+    )..addListener(() {
+        setState(() {
+          _position = _animationController.value * widget.width;
+        });
+      });
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
+
+  void _startAnimation() {
+    if (!_isAnimating) {
+      _animationController.forward();
+      _isAnimating = true;
+    }
+  }
+
+  void _reverseAnimation() {
+    if (_isAnimating) {
+      _animationController.reverse();
+      _isAnimating = false;
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTapDown: (_) => _startAnimation(),
+      onTapUp: (_) => _reverseAnimation(),
+      onTapCancel: () => _reverseAnimation(),
+      child: Container(
+        width: widget.width,
+        height: widget.height,
+        child: Stack(
+          children: [
+            ElevatedButton(
+              onPressed: () {},
+              child: Text(widget.text),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.blue,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(widget.borderRadius),
+                ),
+              ),
+            ),
+            Positioned(
+              top: 0,
+              bottom: 0,
+              left: 0,
+              child: SlideTransition(
+                position: Tween<Offset>(
+                  begin: Offset.zero,
+                  end: Offset(_position, 0.0),
+                ).animate(_animationController),
+                child: ElevatedButton(
+                  onPressed: () {},
+                  child: Text(widget.text),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.red,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(widget.borderRadius),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
