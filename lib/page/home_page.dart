@@ -12,12 +12,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    final iconList = <IconData>[
-      Icons.star,
-      Icons.star,
-      Icons.star,
-      Icons.star,
-    ];
+    final iconList = <IconData>[Icons.star, Icons.star, Icons.star, Icons.abc];
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.white,
@@ -37,6 +32,8 @@ class _HomePageState extends State<HomePage> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: AnimatedBottomNavigationBar(
         icons: iconList,
+        activeColor: Colors.white,
+        inactiveColor: Colors.white,
         activeIndex: 0,
         gapLocation: GapLocation.center,
         notchSmoothness: NotchSmoothness.verySmoothEdge,
@@ -51,10 +48,9 @@ class _HomePageState extends State<HomePage> {
       body: Stack(
         children: [
           /////IMAGE-BACKGROUND//////
-          Expanded(
-            child: Container(
-              child: Image(image: AssetImage("assets/fondo.gif")),
-            ),
+
+          Container(
+            child: Image(image: AssetImage("assets/fondo.gif")),
           ),
         ],
       ),

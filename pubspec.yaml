@@ -41,11 +41,20 @@ dependencies:
   http: ^0.13.4
   html: ^0.15.0
   animated_bottom_navigation_bar: ^1.2.0
+  flutter_native_splash: ^2.2.19
 
 dev_dependencies:
  
   flutter_test:
     sdk: flutter
+  
+flutter_native_splash:
+  color: "#000000"
+  image: assets/luk.png
+  android: true
+  ios: true
+  android_12: true
+ 
 flutter_icons:
   android: "launcher_icon"
   ios: true
