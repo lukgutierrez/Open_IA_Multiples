@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -11,7 +12,41 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    final iconList = <IconData>[
+      Icons.star,
+      Icons.star,
+      Icons.star,
+      Icons.star,
+    ];
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.white,
+        child: Center(
+          child: Text(
+            "INICIAR",
+            style: TextStyle(color: Colors.black, fontSize: 10),
+          ),
+        ),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => PageOne()),
+          );
+        },
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: AnimatedBottomNavigationBar(
+        icons: iconList,
+        activeIndex: 0,
+        gapLocation: GapLocation.center,
+        notchSmoothness: NotchSmoothness.verySmoothEdge,
+        onTap: (b) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => Pagetwo()),
+          );
+        },
+      ),
       backgroundColor: Colors.black,
       body: Stack(
         children: [
@@ -19,23 +54,6 @@ class _HomePageState extends State<HomePage> {
           Expanded(
             child: Container(
               child: Image(image: AssetImage("assets/fondo.gif")),
-            ),
-          ),
-          Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => PageOne()),
-                      );
-                    },
-                    child: Text("INICIAR")),
-                MySlidingButton(
-                    text: "hola", width: 200, height: 200, borderRadius: 30),
-              ],
             ),
           ),
         ],
@@ -56,136 +74,16 @@ class PageOne extends StatelessWidget {
     ));
   }
 }
-//"https://poe.com",
 
-class MySlider extends StatefulWidget {
-  @override
-  _MySliderState createState() => _MySliderState();
-}
-
-class _MySliderState extends State<MySlider> {
-  double _value = 50.0;
-
+class Pagetwo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Slider(
-      value: _value,
-      min: 0,
-      max: 100,
-      divisions: 10,
-      label: _value.round().toString(),
-      onChanged: (double value) {
-        setState(() {
-          _value = value;
-        });
-      },
-    );
-  }
-}
-
-class MySlidingButton extends StatefulWidget {
-  final String text;
-  final double width;
-  final double height;
-  final double borderRadius;
-
-  MySlidingButton({
-    required this.text,
-    required this.width,
-    required this.height,
-    required this.borderRadius,
-  });
-
-  @override
-  _MySlidingButtonState createState() => _MySlidingButtonState();
-}
-
-class _MySlidingButtonState extends State<MySlidingButton>
-    with SingleTickerProviderStateMixin {
-  late AnimationController _animationController;
-
-  bool _isAnimating = false;
-  double _position = 0.0;
-
-  @override
-  void initState() {
-    super.initState();
-
-    _animationController = AnimationController(
-      vsync: this,
-      duration: Duration(milliseconds: 500),
-    )..addListener(() {
-        setState(() {
-          _position = _animationController.value * widget.width;
-        });
-      });
-  }
-
-  @override
-  void dispose() {
-    _animationController.dispose();
-    super.dispose();
-  }
-
-  void _startAnimation() {
-    if (!_isAnimating) {
-      _animationController.forward();
-      _isAnimating = true;
-    }
-  }
-
-  void _reverseAnimation() {
-    if (_isAnimating) {
-      _animationController.reverse();
-      _isAnimating = false;
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTapDown: (_) => _startAnimation(),
-      onTapUp: (_) => _reverseAnimation(),
-      onTapCancel: () => _reverseAnimation(),
-      child: Container(
-        width: widget.width,
-        height: widget.height,
-        child: Stack(
-          children: [
-            ElevatedButton(
-              onPressed: () {},
-              child: Text(widget.text),
-              style: ElevatedButton.styleFrom(
-                primary: Colors.blue,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(widget.borderRadius),
-                ),
-              ),
-            ),
-            Positioned(
-              top: 0,
-              bottom: 0,
-              left: 0,
-              child: SlideTransition(
-                position: Tween<Offset>(
-                  begin: Offset.zero,
-                  end: Offset(_position, 0.0),
-                ).animate(_animationController),
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: Text(widget.text),
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.red,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(widget.borderRadius),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
+    return Scaffold(
+        body: SafeArea(
+      child: WebView(
+        initialUrl: "https://poe.com",
+        javascriptMode: JavascriptMode.unrestricted,
       ),
-    );
+    ));
   }
 }
