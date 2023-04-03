@@ -1,16 +1,3 @@
-# chat_gpt_aplication
+#CHAT-GPT 
+Bienvenidos a ChatGPT, la nueva aplicación de chat para dispositivos Android. Con ChatGPT, podrás chatear de forma inteligente e intuitiva gracias a nuestra tecnología de aprendizaje automático. ChatGPT es una aplicación fácil de usar, que se adapta a tus necesidades individuales y que te brinda la mejor experiencia de chat posible. Nuestro enfoque en la seguridad y la privacidad garantiza que tus datos están protegidos y que no se comparten sin tu consentimiento explícito. ¿Listo para experimentar la mejor forma de chatear?
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
