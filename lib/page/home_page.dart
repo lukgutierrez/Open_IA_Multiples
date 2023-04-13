@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.white,
         child: Center(
           child: Text(
-            "INICIAR",
+            "Iniciar",
             style: TextStyle(color: Colors.black, fontSize: 10),
           ),
         ),
