@@ -42,6 +42,7 @@ dependencies:
   html: ^0.15.0
   animated_bottom_navigation_bar: ^1.2.0
   flutter_native_splash: ^2.2.19
+  flutter_speed_dial: ^6.2.0
 
 dev_dependencies:
  
