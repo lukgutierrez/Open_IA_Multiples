@@ -1,7 +1,6 @@
 import 'package:chat_gpt_aplication/data/Pages_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -36,7 +35,7 @@ class _HomePageState extends State<HomePage> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => WebViewApp()),
+                        MaterialPageRoute(builder: (context) => ChatPoe()),
                       );
                     }),
                 SpeedDialChild(
@@ -117,10 +116,21 @@ class _HomePageState extends State<HomePage> {
           ),
           Center(
               child: ElevatedButton(
-                  onPressed: () {
-                    print("HOLA RAT TOMY MAUSE");
-                  },
-                  child: Text("INICIAR")))
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ChatGPT()),
+              );
+            },
+            child: Text("INICIAR"),
+            style: ElevatedButton.styleFrom(
+              fixedSize: Size(200, 45),
+              backgroundColor: Colors.white38,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.0),
+              ),
+            ),
+          ))
         ]));
   }
 }

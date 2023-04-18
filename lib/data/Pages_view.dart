@@ -1,39 +1,60 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-/////////PAGES CHATBOT////////////////////
+/////////CHATGPT PRICIPLE//////////////////////////////
 
-// class PageOne extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//         body: SafeArea(
-//       child:
-
-//       WebView(
-//         initialUrl: "https://chat.openai.com/chat",
-//         javascriptMode: JavascriptMode.unrestricted,
-//       ),
-//     ));
-//   }
-// }
-
-class WebViewApp extends StatefulWidget {
-  const WebViewApp({super.key});
+class ChatGPT extends StatefulWidget {
+  ChatGPT({Key? key}) : super(key: key);
 
   @override
-  State<WebViewApp> createState() => _WebViewAppState();
+  State<ChatGPT> createState() => _ChatGPTState();
 }
 
-class _WebViewAppState extends State<WebViewApp> {
+class _ChatGPTState extends State<ChatGPT> {
   late final WebViewController controller;
 
   @override
   void initState() {
     super.initState();
     controller = WebViewController()
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
       ..loadRequest(
-        Uri.parse('https://openai.com/blog'),
+        Uri.parse('https://chat.openai.com/chat'),
+      );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: WebViewWidget(
+          controller: controller,
+        ),
+      ),
+    );
+  }
+}
+
+///////////////////////////////////////////////////////////////
+////////////////CHAT-BOTS/////////////////////////////////////
+class ChatPoe extends StatefulWidget {
+  ChatPoe({Key? key}) : super(key: key);
+
+  @override
+  State<ChatPoe> createState() => _ChatPoeState();
+}
+
+class _ChatPoeState extends State<ChatPoe> {
+  late final WebViewController controller;
+
+  @override
+  void initState() {
+    super.initState();
+    controller = WebViewController()
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..loadRequest(
+        Uri.parse(
+            'https://www.bing.com/search?q=fd&form=ANSPH1&refig=3c1eb3a65d7b44c28093217ae46dd3d7&pc=U531&showconv=1'),
       );
   }
 
