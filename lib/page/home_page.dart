@@ -1,3 +1,4 @@
+import 'package:chat_gpt_aplication/data/Pages_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -32,7 +33,12 @@ class _HomePageState extends State<HomePage> {
                 SpeedDialChild(
                     child: Icon(Icons.photo),
                     backgroundColor: Colors.pink,
-                    onTap: () {}),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => WebViewApp()),
+                      );
+                    }),
                 SpeedDialChild(
                     child: Icon(Icons.block),
                     backgroundColor: Color(0xFFF00A884),
@@ -113,22 +119,8 @@ class _HomePageState extends State<HomePage> {
               child: ElevatedButton(
                   onPressed: () {
                     print("HOLA RAT TOMY MAUSE");
-                    PageOne();
                   },
                   child: Text("INICIAR")))
         ]));
-  }
-}
-
-class PageOne extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        body: SafeArea(
-      child: WebView(
-        initialUrl: "https://chat.openai.com/chat",
-        javascriptMode: JavascriptMode.unrestricted,
-      ),
-    ));
   }
 }
