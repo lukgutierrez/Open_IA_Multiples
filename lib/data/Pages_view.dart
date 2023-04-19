@@ -53,8 +53,7 @@ class _ChatPoeState extends State<ChatPoe> {
     controller = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
       ..loadRequest(
-        Uri.parse(
-            'https://www.bing.com/search?q=fd&form=ANSPH1&refig=3c1eb3a65d7b44c28093217ae46dd3d7&pc=U531&showconv=1'),
+        Uri.parse(''),
       );
   }
 
