@@ -53,7 +53,7 @@ class _ChatPoeState extends State<ChatPoe> {
     controller = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
       ..loadRequest(
-        Uri.parse(''),
+        Uri.parse('https://poe.com'),
       );
   }
 
@@ -69,17 +69,38 @@ class _ChatPoeState extends State<ChatPoe> {
   }
 }
 
-//  class Pagetwo extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//         body: SafeArea(
-//       child: const WebView(
-//         initialUrl: "https://poe.com",
-//         javascriptMode: JavascriptMode.unrestricted,
-//       ),
-//     ));
-//   }
-// }
+class GoogleBard extends StatefulWidget {
+  const GoogleBard({Key? key}) : super(key: key);
+
+  @override
+  State<GoogleBard> createState() => _GoogleBardState();
+}
+
+class _GoogleBardState extends State<GoogleBard> {
+  late final WebViewController controller;
+
+  @override
+  void initState() {
+    super.initState();
+    controller = WebViewController()
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..loadRequest(
+        Uri.parse('https://bard.google.com/u/0/'),
+      );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: WebViewWidget(
+          controller: controller,
+        ),
+      ),
+    );
+  }
+}
+
 //////////////PAGES IMAGE DALL/////////////////
 //////////////PAGES AUDIO IA///////////////////
+

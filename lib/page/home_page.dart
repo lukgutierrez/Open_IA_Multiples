@@ -63,18 +63,30 @@ class _HomePageState extends State<HomePage> {
               curve: Curves.bounceInOut,
               children: [
                 SpeedDialChild(
-                    child: Icon(Icons.photo),
-                    backgroundColor: Color(0xFFF00A884),
-                    onTap: () {}),
+                    child: Image(
+                      image: AssetImage("assets/google.png"),
+                    ),
+                    elevation: 0,
+                    label: "Google Bard",
+                    backgroundColor: Colors.transparent,
+                    labelStyle: TextStyle(fontSize: 15.0, color: Colors.white),
+                    labelBackgroundColor: Colors.black,
+                    onTap: () {
+                      print("no ploblem");
+                      ChatGPT();
+                    }),
                 SpeedDialChild(
-                    child: Icon(Icons.block),
-                    backgroundColor: Color(0xFFF00A884),
-                    onTap: () {}),
-                SpeedDialChild(
-                    child: Icon(Icons.camera_front),
-                    backgroundColor: Color(0xFFF00A884),
-                    labelStyle: TextStyle(fontSize: 20.0),
-                    onTap: () {}),
+                    child: Image(
+                      image: AssetImage("assets/poe.png"),
+                    ),
+                    elevation: 0,
+                    label: "Poe",
+                    backgroundColor: Colors.transparent,
+                    labelStyle: TextStyle(fontSize: 15.0, color: Colors.white),
+                    labelBackgroundColor: Colors.black,
+                    onTap: () {
+                      ChatPoe();
+                    }),
               ],
             ),
             /////////////AUDIO_IA//////////////////
