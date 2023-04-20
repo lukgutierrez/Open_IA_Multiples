@@ -18,11 +18,11 @@ class _HomePageState extends State<HomePage> {
           children: [
             ///////IMAGE-IA//////////////////
             SpeedDial(
-              buttonSize: Size(45, 45),
+              buttonSize: Size(40, 40),
               label: Text("Imagen-IA"),
               activeLabel: Text(
                 "@LukGutierrez",
-                style: TextStyle(fontSize: 12),
+                style: TextStyle(fontSize: 10),
               ),
               icon: Icons.image,
               backgroundColor: Colors.black,
@@ -30,22 +30,11 @@ class _HomePageState extends State<HomePage> {
               curve: Curves.bounceInOut,
               children: [
                 SpeedDialChild(
-                    child: Icon(Icons.photo),
-                    backgroundColor: Colors.pink,
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => ChatPoe()),
-                      );
-                    }),
-                SpeedDialChild(
-                    child: Icon(Icons.block),
-                    backgroundColor: Color(0xFFF00A884),
-                    onTap: () {}),
-                SpeedDialChild(
-                    child: Icon(Icons.camera_front),
-                    backgroundColor: Color(0xFFF00A884),
-                    labelStyle: TextStyle(fontSize: 20.0),
+                    labelBackgroundColor: Colors.black,
+                    child: Image(
+                      image: AssetImage("assets/triste.png"),
+                    ),
+                    backgroundColor: Colors.transparent,
                     onTap: () {}),
               ],
             ),
@@ -55,7 +44,7 @@ class _HomePageState extends State<HomePage> {
               label: Text("Chat-IA"),
               activeLabel: Text(
                 "@LukGutierrez",
-                style: TextStyle(fontSize: 8),
+                style: TextStyle(fontSize: 10),
               ),
               icon: Icons.chat_outlined,
               backgroundColor: Colors.black,
@@ -72,8 +61,10 @@ class _HomePageState extends State<HomePage> {
                     labelStyle: TextStyle(fontSize: 15.0, color: Colors.white),
                     labelBackgroundColor: Colors.black,
                     onTap: () {
-                      print("no ploblem");
-                      ChatGPT();
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => GoogleBard()),
+                      );
                     }),
                 SpeedDialChild(
                     child: Image(
@@ -85,17 +76,20 @@ class _HomePageState extends State<HomePage> {
                     labelStyle: TextStyle(fontSize: 15.0, color: Colors.white),
                     labelBackgroundColor: Colors.black,
                     onTap: () {
-                      ChatPoe();
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => ChatPoe()),
+                      );
                     }),
               ],
             ),
             /////////////AUDIO_IA//////////////////
             SpeedDial(
-              buttonSize: Size(45, 45),
+              buttonSize: Size(40, 40),
               label: Text("Audio-IA"),
               activeLabel: Text(
                 "@LukGutierrez",
-                style: TextStyle(fontSize: 12),
+                style: TextStyle(fontSize: 10),
               ),
               backgroundColor: Colors.black,
               icon: Icons.music_note_rounded,
@@ -103,17 +97,11 @@ class _HomePageState extends State<HomePage> {
               curve: Curves.bounceInOut,
               children: [
                 SpeedDialChild(
-                    child: Icon(Icons.photo),
-                    backgroundColor: Color(0xFFF00A884),
-                    onTap: () {}),
-                SpeedDialChild(
-                    child: Icon(Icons.block),
-                    backgroundColor: Color(0xFFF00A884),
-                    onTap: () {}),
-                SpeedDialChild(
-                    child: Icon(Icons.camera_front),
-                    backgroundColor: Color(0xFFF00A884),
-                    labelStyle: TextStyle(fontSize: 20.0),
+                    labelBackgroundColor: Colors.black,
+                    child: Image(
+                      image: AssetImage("assets/triste.png"),
+                    ),
+                    backgroundColor: Colors.transparent,
                     onTap: () {}),
               ],
             ),
