@@ -71,7 +71,7 @@ class _HomePageState extends State<HomePage> {
                       image: AssetImage("assets/poe.png"),
                     ),
                     elevation: 0,
-                    label: "Poe",
+                    label: "Poe IA",
                     backgroundColor: Colors.transparent,
                     labelStyle: TextStyle(fontSize: 15.0, color: Colors.white),
                     labelBackgroundColor: Colors.black,
