@@ -37,10 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   url_launcher: ^6.1.5
   flutter_launcher_icons: ^0.12.0
-  http: ^0.13.4
-  html: ^0.15.0
   animated_bottom_navigation_bar: ^1.2.0
-  flutter_native_splash: ^2.2.19
+  flutter_native_splash: ^2.3.1
   flutter_speed_dial: ^6.2.0
   webview_flutter: ^4.0.7
 
@@ -51,10 +49,12 @@ dev_dependencies:
   
 flutter_native_splash:
   color: "#000000"
-  image: assets/luk.png
+  image: assets/logosplash.png
   android: true
   ios: true
-  android_12: true
+  android_12:
+    color: "#000000"
+    image: assets/logosplash.png
  
 flutter_icons:
   android: "launcher_icon"
