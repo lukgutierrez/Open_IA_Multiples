@@ -1,6 +1,7 @@
 import 'package:chat_gpt_aplication/data/Pages_view.dart';
+import 'package:chat_gpt_aplication/page/information_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_speed_dial/flutter_speed_dial.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -13,101 +14,115 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        floatingActionButton: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            ///////IMAGE-IA//////////////////
-            SpeedDial(
-              buttonSize: Size(40, 40),
-              label: Text("Imagen-IA"),
-              activeLabel: Text(
-                "@LukGutierrez",
-                style: TextStyle(fontSize: 10),
-              ),
-              icon: Icons.image,
-              backgroundColor: Colors.black,
-              visible: true,
-              curve: Curves.bounceInOut,
-              children: [
-                SpeedDialChild(
-                    labelBackgroundColor: Colors.black,
-                    child: Image(
-                      image: AssetImage("assets/triste.png"),
-                    ),
-                    backgroundColor: Colors.transparent,
-                    onTap: () {}),
-              ],
-            ),
-            /////////CHAT-BOT IA///////////////////
-            SpeedDial(
-              buttonSize: Size(50, 50),
-              label: Text("Chat-IA"),
-              activeLabel: Text(
-                "@LukGutierrez",
-                style: TextStyle(fontSize: 10),
-              ),
-              icon: Icons.chat_outlined,
-              backgroundColor: Colors.black,
-              visible: true,
-              curve: Curves.bounceInOut,
-              children: [
-                SpeedDialChild(
-                    child: Image(
-                      image: AssetImage("assets/google.png"),
-                    ),
-                    elevation: 0,
-                    label: "Google Bard",
-                    backgroundColor: Colors.transparent,
-                    labelStyle: TextStyle(fontSize: 15.0, color: Colors.white),
-                    labelBackgroundColor: Colors.black,
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => GoogleBard()),
-                      );
-                    }),
-                SpeedDialChild(
-                    child: Image(
-                      image: AssetImage("assets/poe.png"),
-                    ),
-                    elevation: 0,
-                    label: "Poe IA",
-                    backgroundColor: Colors.transparent,
-                    labelStyle: TextStyle(fontSize: 15.0, color: Colors.white),
-                    labelBackgroundColor: Colors.black,
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => ChatPoe()),
-                      );
-                    }),
-              ],
-            ),
-            /////////////AUDIO_IA//////////////////
-            SpeedDial(
-              buttonSize: Size(40, 40),
-              label: Text("Audio-IA"),
-              activeLabel: Text(
-                "@LukGutierrez",
-                style: TextStyle(fontSize: 10),
-              ),
-              backgroundColor: Colors.black,
-              icon: Icons.music_note_rounded,
-              visible: true,
-              curve: Curves.bounceInOut,
-              children: [
-                SpeedDialChild(
-                    labelBackgroundColor: Colors.black,
-                    child: Image(
-                      image: AssetImage("assets/triste.png"),
-                    ),
-                    backgroundColor: Colors.transparent,
-                    onTap: () {}),
-              ],
-            ),
-          ],
+                floatingActionButton: FloatingActionButton(
+        child: Icon(
+          size: 30,
+          Icons.info,
+          color: Colors.black,
         ),
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.white,
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => InformatePage()),
+          );
+        },
+      ),
+        // floatingActionButton: Row(
+        //   mainAxisAlignment: MainAxisAlignment.spaceAround,
+        //   children: [
+        //     ///////IMAGE-IA//////////////////
+        //     SpeedDial(
+        //       buttonSize: Size(40, 40),
+        //       label: Text("Imagen-IA"),
+        //       activeLabel: Text(
+        //         "@LukGutierrez",
+        //         style: TextStyle(fontSize: 10),
+        //       ),
+        //       icon: Icons.image,
+        //       backgroundColor: Colors.black,
+        //       visible: true,
+        //       curve: Curves.bounceInOut,
+        //       children: [
+        //         SpeedDialChild(
+        //             labelBackgroundColor: Colors.black,
+        //             child: Image(
+        //               image: AssetImage("assets/triste.png"),
+        //             ),
+        //             backgroundColor: Colors.transparent,
+        //             onTap: () {}),
+        //       ],
+        //     ),
+        //     /////////CHAT-BOT IA///////////////////
+        //     SpeedDial(
+        //       buttonSize: Size(50, 50),
+        //       label: Text("Chat-IA"),
+        //       activeLabel: Text(
+        //         "@LukGutierrez",
+        //         style: TextStyle(fontSize: 10),
+        //       ),
+        //       icon: Icons.chat_outlined,
+        //       backgroundColor: Colors.black,
+        //       visible: true,
+        //       curve: Curves.bounceInOut,
+        //       children: [
+        //         SpeedDialChild(
+        //             child: Image(
+        //               image: AssetImage("assets/google.png"),
+        //             ),
+        //             elevation: 0,
+        //             label: "Google Bard",
+        //             backgroundColor: Colors.transparent,
+        //             labelStyle: TextStyle(fontSize: 15.0, color: Colors.white),
+        //             labelBackgroundColor: Colors.black,
+        //             onTap: () {
+        //               Navigator.push(
+        //                 context,
+        //                 MaterialPageRoute(builder: (context) => GoogleBard()),
+        //               );
+        //             }),
+        //         SpeedDialChild(
+        //             child: Image(
+        //               image: AssetImage("assets/poe.png"),
+        //             ),
+        //             elevation: 0,
+        //             label: "Poe IA",
+        //             backgroundColor: Colors.transparent,
+        //             labelStyle: TextStyle(fontSize: 15.0, color: Colors.white),
+        //             labelBackgroundColor: Colors.black,
+        //             onTap: () {
+        //               Navigator.push(
+        //                 context,
+        //                 MaterialPageRoute(builder: (context) => ChatPoe()),
+        //               );
+        //             }),
+        //       ],
+        //     ),
+        //     /////////////AUDIO_IA//////////////////
+        //     SpeedDial(
+        //       buttonSize: Size(40, 40),
+        //       label: Text("Audio-IA"),
+        //       activeLabel: Text(
+        //         "@LukGutierrez",
+        //         style: TextStyle(fontSize: 10),
+        //       ),
+        //       backgroundColor: Colors.black,
+        //       icon: Icons.music_note_rounded,
+        //       visible: true,
+        //       curve: Curves.bounceInOut,
+        //       children: [
+        //         SpeedDialChild(
+        //             labelBackgroundColor: Colors.black,
+        //             child: Image(
+        //               image: AssetImage("assets/triste.png"),
+        //             ),
+        //             backgroundColor: Colors.transparent,
+        //             onTap: () {}),
+        //       ],
+        //     ),
+        //   ],
+        // ),
+        
         body: Stack(children: [
           /////IMAGE-BACKGROUND//////
 
