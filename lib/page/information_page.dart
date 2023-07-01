@@ -115,12 +115,11 @@ class InformatePage extends StatelessWidget {
                     TextButton(
                       onPressed: () async {
                         final url = Uri.parse(
-                          'https://autoditac.net/',
+                          "https://autoditac.net/",
                         );
                         if (await canLaunchUrl(url)) {
                           launchUrl(url, mode: LaunchMode.externalApplication);
                         } else {
-                          // ignore: avoid_print
                           print("Can't launch $url");
                         }
                       },
