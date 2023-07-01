@@ -112,8 +112,11 @@ class _HomePageState extends State<HomePage> {
           /////IMAGE-BACKGROUND//////
 
           Container(
-            child: Image(image: AssetImage("assets/fondo.gif")),
-          ),
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+            image: AssetImage("assets/fondoo.gif"),
+            fit: BoxFit.cover,
+          ))),
           Center(
               child: ElevatedButton(
             onPressed: () {
@@ -122,9 +125,9 @@ class _HomePageState extends State<HomePage> {
                 MaterialPageRoute(builder: (context) => ChatGPT()),
               );
             },
-            child: Text("INICIAR"),
+            child: Text("START"),
             style: ElevatedButton.styleFrom(
-              fixedSize: Size(200, 45),
+              fixedSize: Size(260, 45),
               backgroundColor: Colors.white38,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20.0),
