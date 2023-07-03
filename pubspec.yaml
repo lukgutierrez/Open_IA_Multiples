@@ -41,6 +41,7 @@ dependencies:
   flutter_native_splash: ^2.3.1
   flutter_speed_dial: ^6.2.0
   webview_flutter: ^4.0.7
+  google_mobile_ads: ^3.0.0
 
 dev_dependencies:
  
