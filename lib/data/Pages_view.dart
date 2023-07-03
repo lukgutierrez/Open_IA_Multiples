@@ -57,19 +57,20 @@ class _ChatGPTState extends State<ChatGPT> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Expanded(child: WebViewWidget(controller: controller)),
-          //////////////////////ANUNCIO///////////////////////////
-          Align(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                color: Colors.amber,
-                width: _bannerAd!.size.width.toDouble(),
-                height: _bannerAd!.size.height.toDouble(),
-                child: AdWidget(ad: _bannerAd!),
-              )),
-        ],
+      body: SafeArea(
+        child: Column(
+          children: [
+            Expanded(child: WebViewWidget(controller: controller)),
+            //////////////////////ANUNCIO///////////////////////////
+            Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  width: _bannerAd!.size.width.toDouble(),
+                  height: _bannerAd!.size.height.toDouble(),
+                  child: AdWidget(ad: _bannerAd!),
+                )),
+          ],
+        ),
       ),
     );
   }
