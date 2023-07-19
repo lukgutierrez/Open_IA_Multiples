@@ -2,7 +2,6 @@ import 'package:chat_gpt_aplication/data/Pages_view.dart';
 import 'package:chat_gpt_aplication/page/information_page.dart';
 import 'package:flutter/material.dart';
 
-
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -14,20 +13,20 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-                floatingActionButton: FloatingActionButton(
-        child: Icon(
-          size: 30,
-          Icons.info,
-          color: Colors.black,
+        floatingActionButton: FloatingActionButton(
+          child: Icon(
+            size: 30,
+            Icons.info,
+            color: Colors.black,
+          ),
+          backgroundColor: Colors.white,
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => InformatePage()),
+            );
+          },
         ),
-        backgroundColor: Colors.white,
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => InformatePage()),
-          );
-        },
-      ),
         // floatingActionButton: Row(
         //   mainAxisAlignment: MainAxisAlignment.spaceAround,
         //   children: [
@@ -122,14 +121,14 @@ class _HomePageState extends State<HomePage> {
         //     ),
         //   ],
         // ),
-        
+
         body: Stack(children: [
           /////IMAGE-BACKGROUND//////
 
           Container(
               decoration: BoxDecoration(
                   image: DecorationImage(
-            image: AssetImage("assets/fondoo.gif"),
+            image: AssetImage("assets/fondo.gif"),
             fit: BoxFit.cover,
           ))),
           Center(
