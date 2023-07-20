@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         theme: ThemeData(primaryColor: Colors.black,),
         debugShowCheckedModeBanner: false,
-        title: 'ChatGPT',
+        title: 'IATools',
         home: HomePage());
   }
 }
