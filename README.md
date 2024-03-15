@@ -1,5 +1,7 @@
-# CHAT GPT MULTIPLES
-Bienvenidos a ChatGPT, la nueva aplicación de chat para dispositivos Android. Con ChatGPT, podrás chatear de forma inteligente e intuitiva gracias a nuestra tecnología de aprendizaje automático. ChatGPT es una aplicación fácil de usar, que se adapta a tus necesidades individuales y que te brinda la mejor experiencia de chat posible. Nuestro enfoque en la seguridad y la privacidad garantiza que tus datos están protegidos y que no se comparten sin tu consentimiento explícito. ¿Listo para experimentar la mejor forma de chatear?
+# OPEN IA MULTIPLES
+OpenIA Multiples es una aplicación que reúne las mejores inteligencias artificiales, tales como Gemini, Bard, Poe y Chat GPT, todo en una sola plataforma.
 ![CampMickey](https://res.cloudinary.com/dhysyvasz/image/upload/v1683141898/openia_syjz3n.png)
+# VIDEO DE LA APP
+![CampMickey](https://www.canva.com/design/DAF_lmMx7VU/tZuwcgxp0RosVfB9gJPmAg/watch?utm_content=DAF_lmMx7VU&utm_campaign=designshare&utm_medium=link&utm_source=editor)
 @lukgutierrez :)
 
